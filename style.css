@@ -1,0 +1,81 @@
+/* Fest palette (5 colours)
+   1. #1b1f3b          deep navy   (hex)
+   2. rgb(255,111,97)  coral       (rgb)
+   3. gold             gold        (colour name)
+   4. #2a9d8f          teal        (hex)
+   5. lavenderblush    soft pink   (colour name)
+*/
+
+/* ---------- Element selectors ---------- */
+body {
+    font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+    background-color: lavenderblush;
+    color: #1b1f3b;
+    margin: 0;
+}
+
+h1 {
+    color: gold;
+    font-size: 48px;
+    margin: 0;
+}
+
+h2 {
+    color: rgb(255, 111, 97);
+    font-size: 28px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1b1f3b;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+article {
+    margin-bottom: 20px;
+    padding: 5px 15px;
+}
+
+footer {
+    background-color: #1b1f3b;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ---------- Class selector ---------- */
+.highlight {
+    background-color: gold;
+    border-left: 6px solid #2a9d8f;
+    padding: 12px;
+}
+
+/* ---------- Id selector ---------- */
+#contact {
+    border: 3px solid rgb(255, 111, 97);
+    border-radius: 8px;
+}
+
+/* ---------- Group selector (Task 4) ---------- */
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ---------- Descendant selector (Task 4) ---------- */
+footer p {
+    color: gold;
+    font-style: italic;
+    font-size: 16px;
+    margin: 0;
+}
