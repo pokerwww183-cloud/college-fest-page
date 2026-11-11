@@ -30,17 +30,34 @@ p {
     line-height: 1.6;
 }
 
+/* ---------- Header as a flex container (Session 7, Task 4) ---------- */
 header {
     background-color: #1b1f3b;
-    text-align: center;
-    padding: 30px 10px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;  /* name left, nav right */
+    align-items: center;             /* vertically centred */
+}
+
+nav {
+    display: flex;
+    gap: 16px;
+}
+
+nav a {
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: rgb(255, 111, 97);
 }
 
 main {
     max-width: 900px;
     margin: 20px auto;
     padding: 0 15px;
-    min-height: 1500px; /* so the page scrolls (to test the fixed button) */
 }
 
 article {
@@ -83,11 +100,9 @@ footer p {
 
 /* ================= Session 6 ================= */
 
-/* ---------- Pass cards (Tasks 1, 2 and 4) ---------- */
+/* ---------- Pass cards ---------- */
 .pass {
-    display: inline-block;          /* cards side by side in one row */
-    vertical-align: top;
-    box-sizing: border-box;         /* 220px includes padding and border */
+    box-sizing: border-box;
     width: 220px;
     padding: 16px;
     border: 2px solid #2a9d8f;
@@ -113,7 +128,7 @@ footer p {
     margin-bottom: 0;
 }
 
-/* ---------- 'Popular' badge (Task 4) ---------- */
+/* ---------- 'Popular' badge ---------- */
 .badge {
     position: absolute;
     top: 8px;
@@ -126,7 +141,7 @@ footer p {
     border-radius: 12px;
 }
 
-/* ---------- Fixed Register button (Task 3) ---------- */
+/* ---------- Fixed Register button ---------- */
 .register-btn {
     position: fixed;
     bottom: 20px;
@@ -138,4 +153,89 @@ footer p {
     padding: 12px 24px;
     border-radius: 30px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ================= Session 7 ================= */
+
+/* ---------- Task 1: passes in a flex row ---------- */
+.passes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* ---------- Task 2: schedule slots in a flex row ---------- */
+.slots {
+    display: flex;
+    align-items: center;            /* slots with less text sit in the middle */
+    gap: 10px;
+}
+
+.slot {
+    flex: 1;                        /* no fixed width, so space is shared 2:1 */
+    box-sizing: border-box;
+    background-color: white;
+    border: 2px solid #2a9d8f;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.slot-first {
+    flex: 2;                        /* twice as wide as the others */
+}
+
+.time {
+    font-weight: bold;
+    color: rgb(255, 111, 97);
+    margin: 0;
+}
+
+.event {
+    font-size: 15px;
+    margin: 0;
+}
+
+/* ---------- Task 3: gallery grid ---------- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+}
+
+.tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* tile colours: only the five palette colours */
+.tile:nth-child(5n + 1) {
+    background-color: #1b1f3b;
+    color: gold;
+}
+
+.tile:nth-child(5n + 2) {
+    background-color: rgb(255, 111, 97);
+    color: #1b1f3b;
+}
+
+.tile:nth-child(5n + 3) {
+    background-color: gold;
+    color: #1b1f3b;
+}
+
+.tile:nth-child(5n + 4) {
+    background-color: #2a9d8f;
+    color: white;
+}
+
+.tile:nth-child(5n + 5) {
+    background-color: lavenderblush;
+    color: #1b1f3b;
+    border: 2px solid #1b1f3b;
 }
