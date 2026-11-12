@@ -14,6 +14,10 @@ body {
     margin: 0;
 }
 
+img {
+    max-width: 100%;   /* images never overflow the screen */
+}
+
 h1 {
     color: gold;
     font-size: 48px;
@@ -30,7 +34,7 @@ p {
     line-height: 1.6;
 }
 
-/* ---------- Header as a flex container (Session 7, Task 4) ---------- */
+/* ---------- Header as a flex container ---------- */
 header {
     background-color: #1b1f3b;
     padding: 20px 30px;
@@ -157,7 +161,7 @@ footer p {
 
 /* ================= Session 7 ================= */
 
-/* ---------- Task 1: passes in a flex row ---------- */
+/* ---------- Passes in a flex row ---------- */
 .passes {
     display: flex;
     flex-direction: row;
@@ -165,7 +169,7 @@ footer p {
     gap: 16px;
 }
 
-/* ---------- Task 2: schedule slots in a flex row ---------- */
+/* ---------- Schedule slots in a flex row ---------- */
 .slots {
     display: flex;
     align-items: center;            /* slots with less text sit in the middle */
@@ -196,7 +200,7 @@ footer p {
     margin: 0;
 }
 
-/* ---------- Task 3: gallery grid ---------- */
+/* ---------- Gallery grid ---------- */
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -238,4 +242,63 @@ footer p {
     background-color: lavenderblush;
     color: #1b1f3b;
     border: 2px solid #1b1f3b;
+}
+
+/* ================= Session 8: Responsive ================= */
+
+/* ---------- Tablets and phones (768px and below) ---------- */
+@media (max-width: 768px) {
+
+    /* pass cards stack in one column */
+    .passes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* header: title above nav */
+    header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;            /* links wrap instead of overflowing */
+        justify-content: center;
+    }
+
+    /* schedule slots stack too, so words do not overflow */
+    .slots {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .slot,
+    .slot-first {
+        flex: none;
+    }
+
+    /* gallery: 2 columns and 4 rows */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 100px);
+    }
+}
+
+/* ---------- Small phones (480px and below) ---------- */
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    /* gallery: 1 column and 8 rows */
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 100px);
+    }
 }
